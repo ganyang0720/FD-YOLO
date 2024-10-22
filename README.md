@@ -3,7 +3,7 @@
 <img src="https://github.com/ganyang0720/HM-YOLO/blob/main/Main%20image/7.png" width="400px">
 </div>
 
-# HM-YOLO: An Accurate Strawberry Ripeness Detection Model based on Hybrid Attention Mechanism and Multi-scale Progressive Feature Fusion
+# FD-YOLO: A Real-Time End-to-End Face Mask Detection Algorithm Based on Attention Mechanism
 
 <div align="center">
 
@@ -38,7 +38,7 @@
 
 ## Introduction
 
-This study presents an improved YOLOv8n model (HM-YOLO) designed to enhance the accuracy of machine recognition across various maturity stages of strawberries. Initially, a compact inverted module (PCIB) based on partial convolution (Pconv) was designed to replace the Bottleneck structure in the backbone network’s C2f module, thereby augmenting the expression capability of strawberry target features. Concurrently, an efficient partial hybrid attention mechanism (PHAM) was established by coupling lightweight multi-head self-attention (LMSA) with efficient local attention (ELA), which improved the model’s ability to capture long-range dependencies and accurately localize strawberry regions. Subsequently, within the neck network architecture, adaptively spatial feature fusion (ASFF) technology and an efficient DySample upsampler were introduced to construct a multi-scale progressive feature pyramid network (MS-FPN) integrated with PHAM, enabling precise identification and extraction of fine-grained features of strawberries of different sizes. Lastly, a Focaler-Shape-IoU loss function was proposed to address the variations in difficulty among strawberry samples and the impact of bounding box shapes and sizes on regression. A large complex dataset containing 16,800 strawberry images was built to validate the effectiveness of the model. Experimental results indicate that the proposed model achieves a detection precision of 92.1% and an mAP0.5 of 92.7%, reflecting improvements of 2.0% and 1.7% over the original model, respectively. Therefore, the improved model is deemed suitable to replace the baseline model for application in complex environments for detecting strawberries at different maturity stages.
+Unmanned ground vehicle detection systems are capable of efficiently implementing real-time detection of face masks. However, the existing detection algorithms are limited in their deployment in practical applications due to their high computational costs and difficulty in ensuring accuracy. To address this, we developed a lightweight end-to-end real-time face mask detection algorithm based on YOLOv10n. Firstly, a compact and efficient module(Pstar block) based on the "star operation" (element-wise multiplication) was designed to replace the Bottleneck structure in the C2f module of the backbone network, thereby significantly enhancing the feature extraction capability of the model. Secondly, a lightweight collaborative attention module (LCAM) was proposed, allowing the model to better focus on the position of face mask targets and their relationships in complex scenes, thereby improving its detection capability in dense crowds. Additionally, a lightweight localization feature pyramid network (L2-FPN) based on an efficient local attention (ELA) module was developed. The ELA module filters out low-level feature information and enhances the localization ability for face masks. Then, the features screened for their positional information are fused with multi-scale features, remarkably enhancing the representation of face mask targets of different scales.Finally, the Focaler-UIoU loss function was proposed, effectively addressing the issue of imbalanced sample difficulty in face mask detection and improving the detection performance of the model in densely occluded scenes. Experimental results show that our model achieves a precision of 75.7% and an mAP50 of 74.1%, respectively, while the model parameters and FLOPs are reduced by 0.2M and 0.3G, respectively. To verify the generalization capability of the model., tests were conducted on the AIZOO and RFMD public datasets, and the results show that the model improves the mAP50 metric by 2.6% and 2.2% over the baseline model, respectively. Moreover, when deployed on the embedded edge computing device Jetson AGX Orin, the detection speed reaches 79.1FPS under FP16 quantization, further verifying the superior performance of our model. In summary, the proposed model not only enables real-time and accurate recognition of face mask targets but also effectively balances accuracy and speed.
 
 
 </div>
@@ -61,23 +61,7 @@ We propose a single-stage detection model (HM-YOLO) to improve the detection acc
 <img src="https://github.com/ganyang0720/HM-YOLO/blob/main/Main%20image/1.png" width="700px">
 </div>
 
-## Feature enhancement
-To realistically simulate complex strawberry growth environments, various pixel-level and spatial transformations were employed for data augmentation, utilizing a range of image processing techniques from the Albumentations library (https://github.com/albumentations-team/albumentations). This approach significantly enhanced the expressiveness of the strawberry dataset. It is crucial to maintain the naturalness of image augmentation techniques to avoid deviating from actual growth patterns. For example, the rotation angle was restricted to between 5° and 15° to ensure that the rotation was not excessive while sufficiently simulating perspective variations in natural environments. Additionally, contrast adjustments were kept at a lower level, with a change rate not exceeding 0.15, to prevent over-sharpening or darkening of the images, thereby ensuring that the processed images better reflect natural conditions.The related techniques employed include:
 
-1）RGB Shift: Randomly alters the order of the image color channels, enhancing the model's adaptability to color variations.
-
-2）Shift Scale Rotate: Applies affine transformations to images, including translation, scaling, and rotation, enhancing the model's robustness to changes in target position and scale.
-	
-3）Hue Saturation Value: Randomly adjusts the hue and saturation of images, helping the model better adapt to different environments and scenes.
-
-4）Random Brightness Contrast: Randomly adjusts the brightness and contrast of images to improve the model's adaptability to various lighting conditions.
-
-5）Channel Shuffle: Randomly shuffles the RGB channels of images, adjusting the color distribution to help the model better recognize different color display methods.
-
-6）Elastic Transform: Simulates the effect of images being distorted by elastic materials, aiding the model in learning to recognize non-rigid deformations that may be encountered in practical applications.
-
-
-</div>
 
 ## Result of experiment
 Results of ablation experiments on SBDS dataset, where ① represents PCIB, ② represents MS- FPN, ③ represents Focaler-Shape-IoU.
