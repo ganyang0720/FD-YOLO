@@ -46,7 +46,7 @@ Unmanned ground vehicle detection systems are capable of efficiently implementin
 ## Overview of our network architecture
 We propose a single-stage detection model (HM-YOLO) to improve the detection accuracy of strawberries at different maturities in complex environments. Firstly, the BottleNeck structure in the C2f module is replaced with PCIB in the backbone network to achieve efficient feature extraction. Secondly, MS-FPN is used instead of the original path aggregation network-feature pyramid networks (PAN-FPN) in the neck network to enable more efficient multi-scale feature fusion, which allows for precise identification and extraction of fine-grained features of strawberries at various maturities. Finally, the Focaler-Shape-IoU loss function in the prediction head part is adopted in place of the CIoU loss function to address the issues related to varying difficulty levels between strawberry samples and the impact of bounding box shape and size on regression. In the following sections, a detailed description of the work will be provided.
 <div align="center">
-<img src="https://github.com/ganyang0720/HM-YOLO/blob/main/Main%20image/4.png" width="700px">
+<img src="https://github.com/ganyang0720/FD-YOLO/blob/photos/Fig.1.png" width="700px">
 </div>
 
 ## Ours strawberry datasets
@@ -58,7 +58,7 @@ We propose a single-stage detection model (HM-YOLO) to improve the detection acc
 ## SBDS dataset example
 
 <div align="center">
-<img src="https://github.com/ganyang0720/HM-YOLO/blob/main/Main%20image/1.png" width="700px">
+<img src="https://github.com/ganyang0720/FD-YOLO/blob/photos/Fig.4.png" width="700px">
 </div>
 
 
