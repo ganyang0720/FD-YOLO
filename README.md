@@ -1,6 +1,6 @@
 
 <div align="center">
-<img src="https://github.com/ganyang0720/FD-YOLO/blob/photos/Fig.1.png" width="400px">
+<img src="https://github.com/ganyang0720/FD-YOLO/blob/photos/Fig.7.png" width="400px">
 </div>
 
 # FD-YOLO: A Real-Time End-to-End Face Mask Detection Algorithm Based on Attention Mechanism
