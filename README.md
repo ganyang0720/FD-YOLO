@@ -1,6 +1,6 @@
 
 <div align="center">
-<img src="[https://github.com/ganyang0720/FD-YOLO/blob/ganyang0720-patch-1/Fig.7.png" width="400px">
+<img src="https://github.com/ganyang0720/FD-YOLO/blob/ganyang0720-patch-1/Fig.6.jpg" width="400px">
 </div>
 
 # FD-YOLO: A Real-Time End-to-End Face Mask Detection Algorithm Based on Attention Mechanism
@@ -8,8 +8,8 @@
 <div align="center">
 
   ![](https://img.shields.io/badge/python-3.10.13-red)
-  [![](https://img.shields.io/badge/pytorch-2.0.1-red)](https://pytorch.org/)
-  [![](https://img.shields.io/badge/torchvision-0.15.2-red)](https://pypi.org/project/torchvision/)
+  [![](https://img.shields.io/badge/pytorch-2.2.1-red)](https://pytorch.org/)
+  [![](https://img.shields.io/badge/torchvision-0.17.2-red)](https://pypi.org/project/torchvision/)
   
   
   
@@ -49,7 +49,7 @@ An end-to-end lightweight face mask detection model (FD-YOLO) was proposed, and 
 <img src="https://github.com/ganyang0720/FD-YOLO/blob/photos/Fig.1.png" width="700px">
 </div>
 
-## Ours strawberry datasets
+## Ours datasets
  To verify the robustness of the proposed method, the model was evaluated on four different large datasets. The first dataset is the AIZOO open-source face mask dataset (https://github.com/AIZOOTech/FaceMaskDetection), which consists of two sub-datasets, WIDER Face and MAFA, with a total of 7,872 images, including 6,057 in the training set and 1,815 in the validation set. The second dataset is an internet dataset, where 1,200 diverse face mask photos were collected from the web, including 800 images in the training set and 400 images in the test set. The third dataset is the RFDM open-source dataset (https://github.com/X-zhangyang/Real-World-Masked-Face-Dataset), from which 5,000 photos were selected and randomly divided into a training set of 3,400 images and a validation set of 1,600 images. The fourth dataset is the self-made Largest Face Mask Dataset (LFMD). This custom dataset was created by combining face mask images taken on campus with images from the internet and the RFDM open-source dataset to expand the data volume. Ultimately, this dataset contains 10,200 photos, including 15,242 mask images and 6,834 face images. There are approximately 4,000 face mask photos taken on campus, all captured by smart devices. The randomly divided training and validation sets contain 8,160 and 2,040 images, respectively. Please refer to the links in the configuration section to access the face mask datasets. 
 
 ## LFMD dataset example
@@ -80,7 +80,7 @@ To comprehensively evaluate the performance of our model in face mask detection,
 
 **Note: Models marked with an asterisk (*) represents two-stage networks, those marked with a pound sign (#) denotes end-to-end networks,and those marked with an ampersand (&) are models equipped with other backbone networks, and unmarked models are classified as single-stage network.**
 
-To visually demonstrate the outstanding performance of our model in detecting face mask targets, three representative networks were specifically selected for comparative testing on the LFMD dataset. These three networks are the currently popular single-stage network YOLOv8n, the cutting-edge model YOLO11n from the YOLO series, and the end-to-end network YOLOv10n-MobileNetv4, which is based on YOLO10n and integrates the excellent backbone network MobileNetv4. Detailed test results are presented in Fig. 11, where subfigures (a), (b), (c), and (d) correspond to YOLOv8n, YOLOv10n-MobileNetv4, YOLO11n, and our model, respectively.From the comparison, it was found that YOLOv10n-MobileNetv4 incorrectly detects faces as masks at “r” and misidentifies “s,” highlighting the insufficient feature extraction capability of models utilizing MobileNetv4 as the backbone. Meanwhile, although YOLOv8n successfully detects the face at “t,” it also misdetects “t” and “u,” indicating that its performance in detecting face mask targets in complex scenes still requires improvement. On the other hand, the YOLO11n model also incorrectly detects “v” and “w.” In contrast, our model, which is specifically designed for face mask detection, accurately identifies face mask targets in complex and dense scenes, further highlighting the unique advantages of our model in addressing challenges related to dense occlusions.
+To visually demonstrate the outstanding performance of our model in detecting face mask targets, three representative networks were specifically selected for comparative testing on the LFMD dataset. These three networks are the currently popular single-stage network YOLOv8n, the cutting-edge model YOLO11n from the YOLO series, and the end-to-end network YOLOv10n-MobileNetv4, which is based on YOLO10n and integrates the excellent backbone network MobileNetv4. Detailed test results are presented in Fig. 11, where subfigures (a), (b), (c), and (d) correspond to YOLOv8n, YOLOv10n-MobileNetv4, YOLO11n, and our model, respectively.From the comparison, it was found that YOLOv10n-MobileNetv4 incorrectly detects faces as masks at “r” and misidentifies “s”, highlighting the insufficient feature extraction capability of models utilizing MobileNetv4 as the backbone. Meanwhile, although YOLOv8n successfully detects the face at “t”, it also misdetects “t” and “u,” indicating that its performance in detecting face mask targets in complex scenes still requires improvement. On the other hand, the YOLO11n model also incorrectly detects “v” and “w”. In contrast, our model, which is specifically designed for face mask detection, accurately identifies face mask targets in complex and dense scenes, further highlighting the unique advantages of our model in addressing challenges related to dense occlusions.
 
 <div align="center">
 <img src="https://github.com/ganyang0720/FD-YOLO/blob/ganyang0720-patch-1/Fig.6.png" alt="ddq_arch" width="700">
